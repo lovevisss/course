@@ -35,7 +35,7 @@ class MpApplicationTests {
         User user = new User();
         user.setId(150L);
         user.setName("zufedfc");
-        user.setEmail("test@gmail.com");
+        user.setEmail("test2@gmail.com");
         int row = userMapper.updateById(user);
         System.out.println("update: " + row);
 
