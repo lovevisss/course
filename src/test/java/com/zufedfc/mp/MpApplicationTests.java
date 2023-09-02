@@ -1,15 +1,13 @@
 package com.zufedfc.mp;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zufedfc.mp.entity.User;
 import com.zufedfc.mp.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 @SpringBootTest
 class MpApplicationTests {
@@ -56,6 +54,27 @@ class MpApplicationTests {
         System.out.println("update: " + row);
 
     }
+//    test batch select
+    @Test
+    public void testSelectBatchIds() {
+        userMapper.selectBatchIds(Arrays.asList(1,2,3)).forEach(System.out::println);
+    }
+
+//    test select by map
+    @Test
+    public void testSelectByMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "zufedfc");
+        map.put("age", 18);
+        userMapper.selectByMap(map).forEach(System.out::println);
+    }
+
+//    test select page
+    @Test
+    public void testSelectPage() {
+        userMapper.selectPage(new Page<>(2, 2), null).getRecords().forEach(System.out::println);
+    }
+
 
     @Test
     public void testMAp(){
