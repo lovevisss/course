@@ -14,6 +14,8 @@ public class MyMetaObjectHander implements MetaObjectHandler {
         this.setFieldValByName("createdAt", new Date(), metaObject);
         // 创建自动填充updated_at
         this.setFieldValByName("updatedAt", new Date(), metaObject);
+        // 创建自动填充version
+        this.setFieldValByName("version", 1, metaObject);
 
 
     }
