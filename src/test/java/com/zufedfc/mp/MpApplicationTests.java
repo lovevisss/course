@@ -75,6 +75,24 @@ class MpApplicationTests {
         userMapper.selectPage(new Page<>(2, 2), null).getRecords().forEach(System.out::println);
     }
 
+//    test delete by id
+    @Test
+    public void testDeleteById() {
+        userMapper.deleteById(1L);
+    }
+
+//    test delete logic
+    @Test
+    public void testDeleteLogic() {
+        userMapper.deleteById(3L);
+    }
+
+//    test delete by batch id
+    @Test
+    public void testDeleteBatchIds() {
+        userMapper.deleteBatchIds(Arrays.asList(1,2,3));
+    }
+
 
     @Test
     public void testMAp(){
