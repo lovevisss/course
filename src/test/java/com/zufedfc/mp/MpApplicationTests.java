@@ -25,9 +25,9 @@ class MpApplicationTests {
     @Test
     public void testInsert(){
         User user = new User();
-        user.setName("zufedfc");
-        user.setAge(18);
-        user.setEmail("530822987@qq.com");
+        user.setName("zufedfc3");
+        user.setAge(184);
+        user.setEmail("56fdfs@dfsdffdfd.com");
         user.setPassword("123");
         int insert = userMapper.insert(user);
         System.out.println("insert: " + insert);
